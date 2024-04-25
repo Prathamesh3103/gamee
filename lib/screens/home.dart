@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gamee/main.dart';
 import 'package:gamee/widgets/navigate_button.dart';
 import '../widgets/author.dart';
 import '../widgets/modal_bottom.dart';
@@ -20,6 +21,15 @@ class Home extends StatelessWidget {
               onPressed: () => Navigator.pushNamed(context, '/game'),
               title: 'PLAY WITH AI',
             ),
+            NavigateButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              title: 'Back to Game Choosing screen',
+            ),
             Expanded(
               flex: 3,
               child: GestureDetector(
@@ -33,7 +43,6 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            const Author()
           ],
         ),
       ),

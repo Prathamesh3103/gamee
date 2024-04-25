@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gamee/game/assets.dart';
 import 'package:gamee/game/flappy_bird_game.dart';
+import 'package:gamee/main.dart';
 
 class GameOverScreen extends StatelessWidget {
   final FlappyBirdGame game;
@@ -30,6 +31,19 @@ class GameOverScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
                 child: const Text(
                   'Restart',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                child: const Text(
+                  'Home',
                   style: TextStyle(fontSize: 20),
                 ),
               ),
